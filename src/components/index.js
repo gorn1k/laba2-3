@@ -1,0 +1,5 @@
+export {default as Button} from './Button'
+export {default as Header} from './Header/header'
+export {default as Footer} from './Footer/footer'
+export {default as Content} from './Content/content'
+export {default as Lab_list} from './Lab_list/lab_list'
