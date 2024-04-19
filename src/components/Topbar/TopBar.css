@@ -1,0 +1,19 @@
+
+.top-bar {
+    background-color: #2d013f; /* Цвет фона верхней полосы */
+    color: white; /* Цвет текста в верхней полосе */
+    padding: 5px 1; /* Внутренний отступ в верхней полосе */
+    width: 100%; /* Ширина верхней полосы на всю доступную ширину */
+    height: 50px;
+    text-align: center;
+  }
+  
+.top-bar {
+    line-height: 3;
+}
+
+.top-bar nav a {
+    color: #ffffff; /* Цвет текста ссылок */
+    padding: 5px;
+    text-decoration: none;
+  }

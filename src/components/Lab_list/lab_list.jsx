@@ -1,8 +1,8 @@
 import React from "react";
 
-const Header = ({children}) =>{
-    return (
+const Lab_list = ({children}) =>{
+    return(
         <div>{children}</div>
     )
 }
-export default Header
+export default Lab_list

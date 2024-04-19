@@ -1,0 +1,8 @@
+.sidebar-container {
+    line-height: 2;
+}
+
+.sidebar-container nav a {
+    color: #333; /* Цвет текста ссылок */
+    padding: 5px;
+  }
