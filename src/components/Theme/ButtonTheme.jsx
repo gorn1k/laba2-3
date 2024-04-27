@@ -4,7 +4,7 @@ import { useTheme } from './ThemeContext';
 const ButtonTheme = () => {
   const { theme, toggleTheme } = useTheme();
 
-  console.log(theme, toggleTheme);
+
 
   return (
     <button onClick={toggleTheme}>

@@ -17,3 +17,7 @@ const Menu2 = ({ isOpen, toggleMenu }) => {
 };
 
 export default Menu2;
+
+<Header>
+<h1 onClick={toggleMenu}>Лабораторные работы (клик)</h1>
+</Header>

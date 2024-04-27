@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid'; // Импортируем функцию для генерации UUID
 
 function RegistrationForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -8,12 +9,14 @@ function RegistrationForm() {
 
   const onSubmit = async data => {
     try {
-      await axios.post('http://localhost:3002/data', data);
+      // Генерируем уникальный ID для нового пользователя
+      const newUser = { ...data, id: uuidv4() };
+      await axios.post('http://localhost:3002/data', newUser);
       setRegistrationSuccess(true);
       // Показываем уведомление об успешной отправке данных
       alert('Данные успешно отправлены на сервер!');
     } catch (error) {
-      console.error('Error submitting registration:', error);
+      console.error('Ошибка при отправке данных:', error);
     }
   };
 

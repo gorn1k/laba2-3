@@ -1,14 +1,26 @@
-import React from 'react';
-import './TopBar.css'; // Подключаем CSS файл для стилей
+import React, { useState } from 'react';
+import './TopBar.css';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import Home from '../../Home';
-import About from '../../About';
 import Contact from '../../Contact';
-import { Provider } from 'react-redux'; // Импорт Provider из react-redux
+import About from '../../About';
+import { Provider } from 'react-redux';
 import store from '../Redux/store';
 import ButtonTheme from '../Theme/ButtonTheme';
+import DataTablePage from '../../DataTablePage';
+import Menu from '../Menu/menu'; // Импорт компонента Меню
+import Drawer from '@mui/material/Drawer'; // Импорт компонента Drawer из Material-UI
+import IconButton from '@mui/material/IconButton'; // Импорт компонента IconButton из Material-UI
+import MenuIcon from '@mui/icons-material/Menu'; // Импорт иконки Меню из Material-UI/icons-material
 
 function TopBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для открытия/закрытия меню
+
+  // Функция для открытия/закрытия меню
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <Provider store={store}>
       <Router>
@@ -16,18 +28,29 @@ function TopBar() {
           <header className="top-bar">
             <div className="container">
               <nav>
-                <Link to="/">Регистрация</Link>
-                <Link to="/labs">Лабы</Link>
-                <Link to="/counter">increment/decrement счетчик</Link>
+                <IconButton onClick={toggleMenu} edge="start" color="inherit" aria-label="menu">
+                  <MenuIcon />
+                </IconButton>
+                <Link to="/">Главная</Link>
+                <Link to="/registration">Регистрация</Link>
+                <Link to="/about">О себе</Link>
+                <Link to="/users">Users</Link>
                 <ButtonTheme />
               </nav>
             </div>
           </header>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/labs" element={<About />} />
+            <Route path="/" element={<h1>Главная</h1>} />
+            <Route path="/registration" element={<Home />} />
             <Route path="/counter" element={<Contact />} />
+            <Route path="/labs" element={<About />} />
+            <Route path="/users" element={<DataTablePage />} />
+            <Route path="/about" element={<h1>О себе</h1>} />
           </Routes>
+          {/* Если меню открыто, передаем состояние и функцию для закрытия в компонент Меню */}
+          <Drawer anchor="left" open={isMenuOpen} onClose={toggleMenu}>
+            <Menu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          </Drawer>
         </div>
       </Router>
     </Provider>
