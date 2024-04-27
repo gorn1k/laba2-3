@@ -6,6 +6,7 @@ import About from '../../About';
 import Contact from '../../Contact';
 import { Provider } from 'react-redux'; // Импорт Provider из react-redux
 import store from '../Redux/store';
+import ButtonTheme from '../Theme/ButtonTheme';
 
 function TopBar() {
   return (
@@ -18,6 +19,7 @@ function TopBar() {
                 <Link to="/">Регистрация</Link>
                 <Link to="/labs">Лабы</Link>
                 <Link to="/counter">increment/decrement счетчик</Link>
+                <ButtonTheme />
               </nav>
             </div>
           </header>

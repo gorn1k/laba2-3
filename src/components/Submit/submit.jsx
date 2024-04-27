@@ -1,16 +1,21 @@
-import React, { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 function RegistrationForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
-  const onSubmit = useCallback(data => {
-    // Здесь можно добавить логику для отправки данных на сервер
-    console.log(data);
-    // После успешной отправки формы устанавливаем флаг успешной регистрации в true
-    setRegistrationSuccess(true);
-  }, []);
+  const onSubmit = async data => {
+    try {
+      await axios.post('http://localhost:3002/data', data);
+      setRegistrationSuccess(true);
+      // Показываем уведомление об успешной отправке данных
+      alert('Данные успешно отправлены на сервер!');
+    } catch (error) {
+      console.error('Error submitting registration:', error);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

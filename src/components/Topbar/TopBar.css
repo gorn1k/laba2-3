@@ -17,3 +17,8 @@
     padding: 5px;
     text-decoration: none;
   }
+
+.right-align {
+  margin-left: auto;
+}
+  

@@ -17,7 +17,6 @@ function App() {
             <Container_theme>
               <TopBar />
                 <Footer className="footer">
-                  <ButtonTheme />
                   <p>Гордеев Никита 2024</p>
                 </Footer>
             </Container_theme>

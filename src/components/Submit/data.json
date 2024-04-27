@@ -1,0 +1,22 @@
+[
+  {
+    "firstName": "Иван",
+    "lastName": "Иванов",
+    "email": "ivan@mail.ru"
+  },
+  {
+    "firstName": "Петр",
+    "lastName": "Петров",
+    "email": "petr@mail.ru"
+  },
+  {
+    "firstName": "Nikita",
+    "lastName": "Gordeev",
+    "email": "vogda@mail.ru"
+  },
+  {
+    "firstName": "NikitaFF",
+    "lastName": "GordeevFF",
+    "email": "vogda@mail.ru"
+  }
+]
