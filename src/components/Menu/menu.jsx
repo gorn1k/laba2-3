@@ -20,6 +20,9 @@ const Menu = ({ isOpen, toggleMenu }) => {
         <ListItem button component={Link} to="/counter" onClick={toggleMenu}>
           <ListItemText primary="Лаб-2" />
         </ListItem>
+        <ListItem button component={Link} to="/table" onClick={toggleMenu}>
+          <ListItemText primary="Таблицы" />
+        </ListItem>
         {/* Добавьте другие лабораторные работы по мере необходимости */}
       </List>
     </Drawer>

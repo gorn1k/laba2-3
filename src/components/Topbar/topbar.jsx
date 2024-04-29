@@ -3,6 +3,7 @@ import './TopBar.css';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import Home from '../../Home';
 import Contact from '../../Contact';
+import Table from '../../Table';
 import About from '../../About';
 import { Provider } from 'react-redux';
 import store from '../Redux/store';
@@ -43,6 +44,7 @@ function TopBar() {
             <Route path="/" element={<h1>Главная</h1>} />
             <Route path="/registration" element={<Home />} />
             <Route path="/counter" element={<Contact />} />
+            <Route path="/table" element={<Table />} />
             <Route path="/labs" element={<About />} />
             <Route path="/users" element={<DataTablePage />} />
             <Route path="/about" element={<h1>О себе</h1>} />
