@@ -23,6 +23,12 @@ const Menu = ({ isOpen, toggleMenu }) => {
         <ListItem button component={Link} to="/table" onClick={toggleMenu}>
           <ListItemText primary="Таблицы" />
         </ListItem>
+        <ListItem button component={Link} to="/testbutton" onClick={toggleMenu}>
+          <ListItemText primary="Test-кнопки" />
+        </ListItem>
+        <ListItem button component={Link} to="/lab9" onClick={toggleMenu}>
+          <ListItemText primary="lab9" />
+        </ListItem>
         {/* Добавьте другие лабораторные работы по мере необходимости */}
       </List>
     </Drawer>

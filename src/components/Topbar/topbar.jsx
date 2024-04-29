@@ -5,6 +5,8 @@ import Home from '../../Home';
 import Contact from '../../Contact';
 import Table from '../../Table';
 import About from '../../About';
+import PostsPage from '../lab9/PostsPage';
+// import Test from '../../testbutton';
 import { Provider } from 'react-redux';
 import store from '../Redux/store';
 import ButtonTheme from '../Theme/ButtonTheme';
@@ -47,7 +49,9 @@ function TopBar() {
             <Route path="/table" element={<Table />} />
             <Route path="/labs" element={<About />} />
             <Route path="/users" element={<DataTablePage />} />
+            {/* <Route path="/testbutton" element={<Test />} /> */}
             <Route path="/about" element={<h1>О себе</h1>} />
+            <Route path="/lab9" element={<PostsPage />} />
           </Routes>
           {/* Если меню открыто, передаем состояние и функцию для закрытия в компонент Меню */}
           <Drawer anchor="left" open={isMenuOpen} onClose={toggleMenu}>
